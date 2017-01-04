@@ -33,6 +33,7 @@ app.post('/webhook', function (req, res) {
             }
         } else if (event.postback) {
             console.log("Postback received: " + JSON.stringify(event.postback));
+            sendMessage(event.sender.id, {text: "Good for you"});
         }
     }
     res.sendStatus(200)
